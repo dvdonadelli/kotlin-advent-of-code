@@ -4,7 +4,7 @@ import kotlin.system.measureTimeMillis
 
 fun main() {
     val timeInMillis = measureTimeMillis {
-        firstProblem()
+        println(firstProblem())
     }
 
     println("-------------------------------------")
