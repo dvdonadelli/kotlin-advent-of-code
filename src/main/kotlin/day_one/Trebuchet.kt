@@ -12,18 +12,35 @@ fun main() {
 }
 
 fun firstProblem(): Int {
-    val stringList = readFile("first_problem_input.txt")
+    val stringList = readFile("input.txt")
 
     if (stringList == null) {
         println("Couldn't find any file to read :(")
         return -1;
     }
 
-    /*
-    TODO: Solve algorithm here :)
-     */
+    var start: Int?
+    var end: Int?
+    var sum = 0
 
-    return 0
+    stringList.forEach { word ->
+        start = null
+        end = null
+
+        for (c in word) {
+            if (!c.isDigit())
+                continue
+
+            if (start == null)
+                start = c.digitToInt()
+
+            end = c.digitToInt()
+        }
+
+        sum += "$start$end".toInt()
+    }
+
+    return sum
 }
 
 fun secondProblem(): Int {
